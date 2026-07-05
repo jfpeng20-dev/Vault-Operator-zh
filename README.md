@@ -42,6 +42,7 @@ localStorage.removeItem('vault-operator-ui-lang')
 - 设置面板全部标签页（服务提供商、模型、嵌入向量、网页搜索、MCP、智能体、自动批准、运行循环、记忆、规则、工作流、技能、提示词、界面、外壳、日志、调试、备份、知识库、语言）
 - 聊天侧栏（消息、工具活动、批准卡片、检查点、错误提示）
 - 所有模态框（模型配置、差异审阅、知识库健康修复等）
+- 连接器页面（本地 MCP 地址/Token 展示、配置代码块复制、Claude/Codex/WorkBuddy/TRAE 写入配置）
 - Onboarding 引导流程
 - 命令面板
 - 14 个内置技能的描述
@@ -60,6 +61,7 @@ localStorage.removeItem('vault-operator-ui-lang')
 └── source/                     # 源码改动（便于维护和重新构建）
     ├── zh.ts                   # 中文翻译字典（1420 个键）
     ├── index.ts                # i18n 入口（locale 检测逻辑）
+    ├── McpTab.ts               # 连接器/MCP 设置页（多客户端写入与复制配置）
     ├── VaultTab.ts             # 知识库设置页（硬编码字符串已汉化）
     ├── SkillsTab.ts            # 技能设置页（硬编码字符串已汉化）
     └── bundled-skills/         # 14 个内置技能（description 已汉化）
@@ -82,6 +84,7 @@ npm install
 # 2. 把本仓库 source/ 下的文件覆盖到官方源码对应位置
 #    - source/zh.ts           → src/i18n/locales/zh.ts（新建）
 #    - source/index.ts        → src/i18n/index.ts（覆盖）
+#    - source/McpTab.ts       → src/ui/settings/McpTab.ts（覆盖）
 #    - source/VaultTab.ts     → src/ui/settings/VaultTab.ts（覆盖）
 #    - source/SkillsTab.ts    → src/ui/settings/SkillsTab.ts（覆盖）
 #    - source/bundled-skills/ → bundled-skills/（覆盖）
